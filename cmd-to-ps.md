@@ -9,6 +9,13 @@ I personally use PowerShell over Command Prompt for the following reasons:
 
 It however has its flaws, and I typically route most of my commands to cygwin executables so that I have a similar environment between Windows and Linux. This guide will show you how to create a profile which gives you command prompt like environment.
 
+## Execution policy
+Unfortunately PowerShell by defaults disables running non-signed PowerShell scripts. This obstructs nearly all users, so the first you must do is change or bypass the execution policy. There are a number of ways of doing this:
+
+https://blog.netspi.com/15-ways-to-bypass-the-powershell-execution-policy/
+
+In Windows 10, you can change it under Settings -> Update & security -> For developers.
+
 ## Profile
 ### Standard method:
 PowerShell by default loads your profile from:
