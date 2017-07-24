@@ -38,7 +38,7 @@ powershell -NoProfile -NoExit -Command ". profile.ps1"
 ```
 
 ## Prompt
-The default behaviour of PowerShell's prompt is similar to Command Prompt. It is more user friendly as it allows selection, cut and paste using the cursor keys, CTRL+C and CTRL+V respectively. Unlike command prompt, tab completion does not remove all the characters after your caret.
+The default behaviour of PowerShell's prompt is similar to Command Prompt. It is more user friendly as it allows selection, cut and paste using the cursor keys, CTRL+C and CTRL+V respectively. Unlike command prompt, tab completion does not remove all the characters after your caret. One gotcha is that `.\` is now required to run any executable within the current directory (like in bash), thankfully this is automatically inserted when pressing TAB.
 
 I like to enable the following features:
 
