@@ -108,7 +108,10 @@ function strargs($args2)
     }
     return $result
 }
-function ls { Invoke-Expression ("Get-ChildItem " + (strargs $args)) | Select-Object Mode, LastWriteTime, Length, Name, Target | Format-Table } }
+function ls
+{
+    Invoke-Expression ("Get-ChildItem " + (strargs $args)) | Select-Object Mode, LastWriteTime, Length, Name, Target | Format-Table
+}
 ```
 A demonstration of defining your own custom directory listing style and how to pipe the output to another cmdlet.
 
