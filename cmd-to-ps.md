@@ -54,6 +54,24 @@ Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
 ```
 This is one of my favourite abilities which I first came across in [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh). This allows you to type the first part of a command and then have it auto complete with a previously typed command using the up and down arrow keys. It makes searching and running historical commands so much faster to do.
 
+You can set your prompt text by defining a `prompt` function. Here is the one I use which displays the name of current directory you are in:
+
+```powershell
+function prompt
+{
+    $pwd = (Get-Location).Path
+    $folderName = [System.IO.Path]::GetFileName($pwd)
+    if ($folderName -eq "")
+    {
+        $folderName = $pwd
+    }
+    Write-Host "PS " -NoNewline
+    Write-Host $folderName -ForegroundColor DarkCyan -NoNewline
+    return " ";
+}
+```
+
+
 ## Aliases
 PowerShell works by defining and running cmdlets which are functions that you can define or import as opposed to running separate applications. This allows .NET objects to be passed around rather than plain text which offers many advantages. PowerShell by default aliases many well known shell commands to their equivalent cmdlets.
 
